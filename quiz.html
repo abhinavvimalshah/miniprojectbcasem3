@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Quiz Time</title>
+  <title>Quiz Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --accent:#3b82f6; --muted:#9ca3af; }
@@ -56,9 +56,10 @@
     <div class="card">
       <!-- MAIN SCREEN -->
       <section id="main" class="screen active">
-        <h1>Welcome to  Quiz Time</h1>
+        <h1>Welcome to the Quiz Game</h1>
         <p>Pick a category and answer 5 questions. Ready?</p>
         <button class="btn" id="playBtn">Play</button>
+        <br><br><br><p><center>Created by Abhinav Shah,Aaryan tari,Advait Khedekar</center></p>
       </section>
 
       <!-- CATEGORY SCREEN -->
@@ -68,6 +69,7 @@
         <div class="grid cols-2" id="categoryButtons"></div>
         <div class="spacer"></div>
         <button class="btn ghost" id="backToMain">Back</button>
+  
       </section>
 
       <!-- QUIZ SCREEN -->
@@ -105,6 +107,221 @@
     class QuizData {
       constructor() {
         this.data = {
+     Tourism : [
+  // Monuments & Heritage
+  { q: "The Taj Mahal is located in:", options: ["Delhi", "Agra", "Jaipur", "Lucknow"], a: 1 },
+  { q: "The Qutub Minar was built by:", options: ["Akbar", "Qutb-ud-din Aibak", "Shah Jahan", "Aurangzeb"], a: 1 },
+  { q: "Hampi, a UNESCO World Heritage site, is in which state?", options: ["Karnataka", "Maharashtra", "Tamil Nadu", "Andhra Pradesh"], a: 0 },
+  { q: "The Sun Temple at Konark is designed in the shape of a:", options: ["Chariot", "Temple tower", "Palace", "Pyramid"], a: 0 },
+  { q: "The Ajanta and Ellora caves are located in:", options: ["Maharashtra", "Madhya Pradesh", "Rajasthan", "Gujarat"], a: 0 },
+  { q: "The Red Fort in Delhi was built by:", options: ["Humayun", "Akbar", "Shah Jahan", "Aurangzeb"], a: 2 },
+
+  // Natural Attractions
+  { q: "Kaziranga National Park, home of the one-horned rhinoceros, is in:", options: ["Assam", "West Bengal", "Odisha", "Sikkim"], a: 0 },
+  { q: "The Valley of Flowers is located in:", options: ["Himachal Pradesh", "Uttarakhand", "Sikkim", "Kerala"], a: 1 },
+  { q: "The Backwaters of Alleppey are in:", options: ["Goa", "Kerala", "Tamil Nadu", "Andhra Pradesh"], a: 1 },
+  { q: "Darjeeling hill station is located in:", options: ["Assam", "West Bengal", "Meghalaya", "Nagaland"], a: 1 },
+  { q: "The Sundarbans mangrove forest is in:", options: ["Assam", "Odisha", "West Bengal", "Gujarat"], a: 2 },
+  { q: "Dal Lake, famous for houseboats, is in:", options: ["Himachal Pradesh", "Jammu & Kashmir", "Uttarakhand", "Punjab"], a: 1 },
+
+  // Religious & Cultural Sites
+  { q: "The Golden Temple (Harmandir Sahib) is in:", options: ["Delhi", "Punjab", "Haryana", "Rajasthan"], a: 1 },
+  { q: "Meenakshi Temple is located in:", options: ["Madurai", "Chennai", "Kochi", "Bengaluru"], a: 0 },
+  { q: "Jagannath Temple is located at:", options: ["Varanasi", "Konark", "Puri", "Bhopal"], a: 2 },
+  { q: "Akshardham Temple is in:", options: ["Mumbai", "Delhi", "Ahmedabad", "Jaipur"], a: 1 },
+  { q: "The Brihadeeswara Temple is in:", options: ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh"], a: 1 },
+  { q: "Somnath Temple is located in which state?", options: ["Rajasthan", "Gujarat", "Madhya Pradesh", "Uttarakhand"], a: 1 },
+
+  // Cities & Forts
+  { q: "City Palace is a major attraction of:", options: ["Jaipur", "Udaipur", "Jodhpur", "Mysore"], a: 1 },
+  { q: "Charminar is located in:", options: ["Hyderabad", "Lucknow", "Delhi", "Bhopal"], a: 0 },
+  { q: "Mysore Palace is in:", options: ["Kerala", "Karnataka", "Tamil Nadu", "Maharashtra"], a: 1 },
+  { q: "Amber Fort is located in:", options: ["Jodhpur", "Jaipur", "Agra", "Udaipur"], a: 1 },
+  { q: "Gateway of India is located in:", options: ["Delhi", "Mumbai", "Chennai", "Goa"], a: 1 },
+  { q: "India Gate is located in:", options: ["Mumbai", "Delhi", "Pune", "Kolkata"], a: 1 },
+
+  // Miscellaneous Attractions
+  { q: "The Elephanta Caves are near:", options: ["Mumbai", "Kolkata", "Chennai", "Goa"], a: 0 },
+  { q: "Which city is called the 'Pink City' of India?", options: ["Udaipur", "Jaipur", "Jodhpur", "Agra"], a: 1 },
+  { q: "Which city is called the 'Blue City'?", options: ["Udaipur", "Jodhpur", "Jaipur", "Bikaner"], a: 1 },
+  { q: "Which city is called the 'City of Lakes'?", options: ["Jodhpur", "Jaipur", "Udaipur", "Mysore"], a: 2 },
+  { q: "Which state is famous for Rann of Kutch?", options: ["Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"], a: 2 },
+  { q: "Ellora Caves are famous for:", options: ["Rock-cut architecture", "Wooden carvings", "Metal structures", "Glass temples"], a: 0 }
+],
+
+           Statistics : [
+  // Mean, Median, Mode
+  { q: "The arithmetic mean of 5, 10, 15 is:", options: ["5", "10", "15", "30"], a: 1 },
+  { q: "If the number of terms is even, the median is:", options: ["Middle term", "Average of two middle terms", "Largest term", "First term"], a: 1 },
+  { q: "Which measure of central tendency is most affected by extreme values?", options: ["Mean", "Median", "Mode", "All equally"], a: 0 },
+  { q: "In a symmetrical distribution, relation is:", options: ["Mean < Median < Mode", "Mean = Median = Mode", "Mean > Median > Mode", "None"], a: 1 },
+
+  // Dispersion
+  { q: "Mean deviation can be calculated from:", options: ["Mean only", "Median only", "Mode only", "Any central tendency"], a: 3 },
+  { q: "The square root of variance is called:", options: ["Mean", "Standard deviation", "Range", "Quartile deviation"], a: 1 },
+  { q: "If all values are equal, standard deviation is:", options: ["1", "0", "Equal to variance", "Undefined"], a: 1 },
+  { q: "A small value of standard deviation means:", options: ["High variability", "Low variability", "No variability", "Wrong data"], a: 1 },
+
+  // Correlation
+  { q: "The value of correlation coefficient (r) lies between:", options: ["-∞ to +∞", "-1 to +1", "0 to 1", "-0.5 to +0.5"], a: 1 },
+  { q: "If r = 0, it means:", options: ["Perfect positive", "Perfect negative", "No correlation", "Wrong calculation"], a: 2 },
+  { q: "Karl Pearson’s coefficient formula is:", options: ["Cov(X,Y)/(σX×σY)", "σX/σY", "Var(X)/Var(Y)", "(X̄ – Ȳ)/n"], a: 0 },
+
+  // Regression / Curve fitting
+  { q: "A first-degree curve is equivalent to:", options: ["Straight line", "Parabola", "Hyperbola", "Circle"], a: 0 },
+  { q: "The method commonly used to fit a straight line is:", options: ["Least squares", "Maximum likelihood", "Trial & error", "Correlation"], a: 0 },
+
+  // Probability
+  { q: "The probability of any event lies between:", options: ["-1 to +1", "0 to 1", "0 to ∞", "-∞ to ∞"], a: 1 },
+  { q: "If P(A)=0.5, P(B)=0.4 and independent, P(A∩B) =", options: ["0.9", "0.1", "0.2", "0.25"], a: 3 },
+  { q: "Conditional probability P(A|B) =", options: ["P(A)/P(B)", "P(A∩B)/P(B)", "P(A∩B)/P(A)", "P(A)+P(B)"], a: 1 },
+  { q: "Probability of getting at least one head in 2 coin tosses:", options: ["1/4", "1/2", "3/4", "1"], a: 2 },
+
+  // Sampling & Hypothesis
+  { q: "The statement tested in hypothesis testing is:", options: ["Alternative hypothesis", "Null hypothesis", "Research hypothesis", "Probability hypothesis"], a: 1 },
+  { q: "t-distribution is used when:", options: ["Sample small & variance unknown", "Sample large", "Population infinite", "Normal doesn’t apply"], a: 0 }
+],
+
+        ComputerHardware : [
+  // BIOS
+  { q: "The primary function of BIOS is:", options: ["Manage files in storage", "Perform POST and load OS", "Provide GUI for apps", "Control power supply"], a: 1 },
+  { q: "In BIOS, POST stands for:", options: ["Power On Self Test", "Program Output System Test", "Processor Overclock System Tool", "Peripheral OS Transfer"], a: 0 },
+
+  // Hardware & Software
+  { q: "Which of the following is system software?", options: ["Compiler", "Antivirus", "Operating System", "All of the above"], a: 3 },
+  { q: "Which of these is hardware?", options: ["Mouse", "Browser", "Spreadsheet", "Antivirus"], a: 0 },
+  { q: "Firmware is:", options: ["Software in ROM", "Hardware inside CPU", "Temporary program in RAM", "Application software"], a: 0 },
+
+  // Motherboard
+  { q: "Which component is considered the 'heart' of the motherboard?", options: ["CPU", "BIOS chip", "RAM slots", "Chipset"], a: 3 },
+  { q: "Which slots connect graphics/expansion cards?", options: ["DIMM slots", "PCI/PCIe slots", "SATA slots", "USB slots"], a: 1 },
+  { q: "The CMOS battery is used to:", options: ["Store files", "Run processor", "Maintain time & BIOS settings", "Increase RAM speed"], a: 2 },
+
+  // I/O Ports
+  { q: "Which of the following is an input device?", options: ["Printer", "Scanner", "Monitor", "Plotter"], a: 1 },
+  { q: "USB stands for:", options: ["Universal System Bus", "United Serial Bus", "Universal Serial Bus", "Uniform Standard Bus"], a: 2 },
+  { q: "HDMI ports are mainly used for:", options: ["Audio and video", "Hard drives", "Network communication", "BIOS update"], a: 0 },
+
+  // Primary & Secondary Storage
+  { q: "RAM is an example of:", options: ["Primary (volatile)", "Primary (non-volatile)", "Secondary storage", "Cache"], a: 0 },
+  { q: "Which of the following is secondary storage?", options: ["Cache", "ROM", "Hard disk", "RAM"], a: 2 },
+  { q: "Which storage is non-volatile?", options: ["RAM", "ROM", "Cache", "Registers"], a: 1 },
+  { q: "SSDs differ from HDDs because:", options: ["Use magnetic disks", "Use flash memory, no moving parts", "Slower access times", "Not for laptops"], a: 1 },
+
+  // Network Devices
+  { q: "Which device works at Data Link Layer?", options: ["Hub", "Switch", "Router", "Repeater"], a: 1 },
+  { q: "A router connects:", options: ["Computers in same LAN", "LAN to WAN/Internet", "Only wireless devices", "Printers"], a: 1 },
+  { q: "Which device works on broadcast model, no filtering?", options: ["Router", "Switch", "Hub", "Bridge"], a: 2 },
+  { q: "NIC (Network Interface Card) is used for:", options: ["Video", "Audio", "Network connectivity", "BIOS storage"], a: 2 },
+  { q: "A firewall is used to:", options: ["Speed CPU", "Protect network", "Store credentials", "Reduce router cost"], a: 1 }
+],
+
+           DBMS:[ // Introduction & Architecture
+  { q: "Which best defines data independence in DBMS?", options: ["Access without authentication", "Storage changes don’t affect programs", "Users write queries in natural language", "Ability to manage distributed data"], a: 1 },
+  { q: "In 3-level DBMS architecture, which level deals with physical storage?", options: ["External", "Conceptual", "Internal", "View"], a: 2 },
+
+  // Data Models
+  { q: "Which is an object-based logical model?", options: ["Relational model", "Entity-Relationship model", "Network model", "Hierarchical model"], a: 1 },
+  { q: "A record-based logical model organizes data into:", options: ["Objects and classes", "Records, fields, and files", "XML docs", "Nodes and edges"], a: 1 },
+
+  // UML & Database Design
+  { q: "In UML diagrams, relationships are represented by:", options: ["Rectangles", "Diamonds", "Lines connecting classes", "Ovals"], a: 2 },
+  { q: "Which is NOT a UML diagram used in DB design?", options: ["Class diagram", "Sequence diagram", "ER diagram", "Use case diagram"], a: 2 },
+
+  // SQL
+  { q: "Which SQL command creates a new table?", options: ["INSERT", "CREATE", "UPDATE", "ALTER"], a: 1 },
+  { q: "Which belongs to DML?", options: ["CREATE", "SELECT", "DROP", "ALTER"], a: 1 },
+  { q: "A view in SQL is:", options: ["A physical table", "A virtual table", "A delete command", "A backup file"], a: 1 },
+  { q: "Which SQL command is part of DCL?", options: ["GRANT", "SELECT", "UPDATE", "CREATE"], a: 0 },
+
+  // Relational Algebra & Keys
+  { q: "In relational algebra, σ (sigma) means:", options: ["Projection", "Selection", "Union", "Join"], a: 1 },
+  { q: "Which key uniquely identifies a row?", options: ["Foreign key", "Candidate key", "Primary key", "Alternate key"], a: 2 },
+  { q: "A foreign key is used to:", options: ["Enforce referential integrity", "Identify rows uniquely", "Replace primary key", "Store large values"], a: 0 },
+
+  // Relational Model
+  { q: "Which is a characteristic of relational model?", options: ["Data stored as pointers", "Data stored as tables", "Data in trees", "Key-value pairs"], a: 1 },
+  { q: "Who proposed relational database model?", options: ["Charles Bachman", "Edgar F. Codd", "Peter Chen", "Stonebraker"], a: 1 },
+
+  // Transaction Management (ACID)
+  { q: "In ACID, Atomicity ensures:", options: ["Transactions in isolation", "All or none execution", "Database stays consistent", "Data permanent"], a: 1 },
+  { q: "Consistency in ACID means:", options: ["Transactions run one by one", "Database moves to valid state", "Many transactions run at once", "Database restores after crash"], a: 1 },
+  { q: "Which ACID property makes committed changes permanent?", options: ["Atomicity", "Consistency", "Isolation", "Durability"], a: 3 },
+  { q: "If two transactions access same data without isolation, it may cause:", options: ["Deadlock", "Concurrency control", "Lost updates", "Rollback"], a: 2 },
+  { q: "Which ensures isolation in transactions?", options: ["Normalization", "Locking", "Denormalization", "Backups"], a: 1 }
+],
+
+
+
+          Java: [
+  // Introduction to Java
+  { q: "Which of the following is not a primitive data type in Java?", options: ["int", "float", "boolean", "String"], a: 3 },
+  { q: "The default value of an uninitialized boolean variable in Java is:", options: ["true", "false", "0", "null"], a: 1 },
+  { q: "In Java, arrays are:", options: ["Primitive data types", "Objects", "Methods", "Operators"], a: 1 },
+  { q: "Which method is used to find square root in Java?", options: ["sqrt(x)", "x.sqrt()", "Math.sqrt(x)", "Math.power(x,0.5)"], a: 2 },
+  { q: "The size of int in Java is:", options: ["2 bytes", "4 bytes", "8 bytes", "Depends on system"], a: 1 },
+  { q: "If you access an array index out of bounds in Java, it throws:", options: ["NullPointerException", "IndexError", "ArrayIndexOutOfBoundsException", "IllegalAccessError"], a: 2 },
+
+  // Objects and Classes
+  { q: "Which keyword is used to create an object in Java?", options: ["this", "new", "object", "create"], a: 1 },
+  { q: "What is the default return type of a constructor in Java?", options: ["void", "int", "Object of the class", "None"], a: 2 },
+  { q: "The finalize() method is used for:", options: ["Initializing objects", "Cleaning before garbage collection", "Overloading constructors", "Managing threads"], a: 1 },
+  { q: "Which class is immutable in Java?", options: ["String", "StringBuffer", "StringBuilder", "Scanner"], a: 0 },
+  { q: "Which method is used to find length of a String?", options: ["strlen()", "size()", "length()", "getSize()"], a: 2 },
+  { q: "Which class is thread-safe?", options: ["String", "StringBuffer", "StringBuilder", "ArrayList"], a: 1 },
+
+  // Constructors
+  { q: "A constructor with no arguments is called:", options: ["Default constructor", "Parameterized constructor", "Copy constructor", "Abstract constructor"], a: 0 },
+  { q: "Constructor overloading in Java means:", options: ["Same name, different parameter list", "Same name, different return type", "Same name, different access specifier", "None"], a: 0 },
+  { q: "Which method can request garbage collection?", options: ["delete()", "free()", "System.gc()", "finalize()"], a: 2 },
+  { q: "Which statement about constructors is true?", options: ["They must return void", "They cannot be abstract", "They can be inherited", "They can be called like methods"], a: 1 },
+  { q: "If no constructor is provided, then:", options: ["Compilation error", "JVM provides default constructor", "Class cannot be instantiated", "Only abstract methods allowed"], a: 1 },
+  { q: "Which manages automatic memory in Java?", options: ["JDK", "JVM", "JRE", "Compiler"], a: 1 },
+
+  // Inheritance and Polymorphism
+  { q: "Which keyword is used to call parent class constructor?", options: ["this()", "super()", "parent()", "base()"], a: 1 },
+  { q: "Which type of inheritance is not supported directly in Java?", options: ["Single", "Multilevel", "Multiple (via classes)", "Hierarchical"], a: 2 },
+  { q: "When subclass has same method name and signature as parent, it is:", options: ["Overloading", "Overriding", "Hiding", "Chaining"], a: 1 },
+  { q: "Which is true about overriding?", options: ["Return type must differ", "Access level can be more restrictive", "Must have same name and parameters", "Static methods can be overridden"], a: 2 },
+  { q: "Runtime polymorphism in Java is achieved by:", options: ["Method overloading", "Method overriding", "Constructor overloading", "Variable shadowing"], a: 1 },
+  { q: "A class declared final means:", options: ["Cannot have objects", "Cannot be extended", "Cannot be instantiated", "Cannot be imported"], a: 1 },
+
+  // Exception Handling
+  { q: "Which block must always be present in exception handling?", options: ["try", "catch", "finally", "none"], a: 0 },
+  { q: "If an exception is not caught, JVM will:", options: ["Ignore it", "Terminate program", "Assign default values", "Compile error"], a: 1 },
+  { q: "Which keyword is used to manually throw an exception?", options: ["throws", "throw", "raise", "error"], a: 1 },
+  { q: "Which is a checked exception?", options: ["NullPointerException", "ArithmeticException", "IOException", "ArrayIndexOutOfBoundsException"], a: 2 },
+  { q: "The finally block executes:", options: ["Only if no exception", "Only if exception occurs", "Always", "Only in normal exit"], a: 2 },
+  { q: "Base class of all exceptions in Java is:", options: ["Error", "Throwable", "Exception", "RuntimeException"], a: 1 }
+],
+
+  Geography: [
+    { q: "The longest river in India is:", options: ["Ganga", "Yamuna", "Godavari", "Brahmaputra"], a: 0 },
+    { q: "The Thar Desert is located in which state?", options: ["Gujarat", "Rajasthan", "Punjab", "Haryana"], a: 1 },
+    { q: "The highest peak in India is:", options: ["K2 (Godwin Austen)", "Kanchenjunga", "Nanda Devi", "Mount Everest"], a: 0 },
+    { q: "The Sundarbans mangrove forest is famous for:", options: ["Elephants", "Royal Bengal tigers", "Leopards", "Asiatic lions"], a: 1 },
+    { q: "Which is the largest state of India by area?", options: ["Uttar Pradesh", "Rajasthan", "Madhya Pradesh", "Maharashtra"], a: 1 },
+    { q: "Chilika Lake, India’s largest coastal lagoon, is in:", options: ["Kerala", "Odisha", "Andhra Pradesh", "West Bengal"], a: 1 },
+    { q: "The 'Silicon Valley of India' refers to:", options: ["Mumbai", "Chennai", "Hyderabad", "Bengaluru"], a: 3 },
+    { q: "The Tropic of Cancer passes through how many Indian states?", options: ["6", "7", "8", "9"], a: 2 },
+    { q: "The capital of Arunachal Pradesh is:", options: ["Itanagar", "Dispur", "Imphal", "Aizawl"], a: 0 },
+    { q: "The Gir National Park is famous for:", options: ["Tigers", "Leopards", "Asiatic lions", "Elephants"], a: 2 },
+    { q: "Diwali is also known as:", options: ["Festival of Colors", "Festival of Harvest", "Festival of Lights", "Festival of Music"], a: 2 },
+    { q: "Which festival is called the 'Festival of Colors'?", options: ["Pongal", "Holi", "Baisakhi", "Onam"], a: 1 },
+    { q: "Onam is the main festival of which state?", options: ["Kerala", "Tamil Nadu", "Andhra Pradesh", "Karnataka"], a: 0 },
+    { q: "Bihu is a popular festival of:", options: ["Punjab", "Assam", "West Bengal", "Bihar"], a: 1 },
+    { q: "The dance form 'Garba' is associated with which festival?", options: ["Durga Puja", "Diwali", "Navratri", "Makar Sankranti"], a: 2 },
+    { q: "Which Sikh festival marks the harvest season in Punjab?", options: ["Lohri", "Baisakhi", "Guru Nanak Jayanti", "Hola Mohalla"], a: 1 },
+    { q: "The Kumbh Mela is held once every:", options: ["6 years", "8 years", "10 years", "12 years"], a: 3 },
+    { q: "Pongal is celebrated to honor:", options: ["Lord Krishna", "The Sun God", "Goddess Durga", "River Ganga"], a: 1 },
+    { q: "Ganesh Chaturthi is most widely celebrated in:", options: ["Gujarat", "Maharashtra", "Tamil Nadu", "Karnataka"], a: 1 },
+    { q: "Which festival is associated with 'Rath Yatra'?", options: ["Durga Puja", "Jagannath Puri Festival", "Onam", "Pongal"], a: 1 },
+    { q: "The dish 'Dhokla' originates from which state?", options: ["Gujarat", "Maharashtra", "Rajasthan", "Punjab"], a: 0 },
+    { q: "The famous dish 'Rogan Josh' comes from:", options: ["Himachal Pradesh", "Jammu & Kashmir", "Uttar Pradesh", "Punjab"], a: 1 },
+    { q: "The sweet 'Rasgulla' is traditionally from:", options: ["Odisha / West Bengal", "Kerala", "Punjab", "Assam"], a: 0 },
+    { q: "Which state is famous for the snack 'Litti Chokha'?", options: ["Bihar", "Madhya Pradesh", "Jharkhand", "Uttar Pradesh"], a: 0 },
+    { q: "Hyderabadi Biryani was introduced during the rule of:", options: ["Mughals", "Nizams", "British", "Marathas"], a: 1 },
+         ],
           Science: [
             { q: "What planet is known as the Red Planet?", options: ["Earth", "Mars", "Venus", "Jupiter"], a: 1 },
             { q: "What gas do plants absorb?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], a: 1 },
@@ -183,7 +400,10 @@
     }
     function resetQuiz(cat) {
       currentCategory = cat;
-      questions = [...data.get(cat)]; // shallow copy
+      const allQs = [...data.get(cat)];
+      // [EDIT] Shuffle & pick 5
+      questions = allQs.sort(() => Math.random() - 0.5).slice(0, 5);
+      //questions = [...data.get(cat)]; // shallow copy
       qIndex = 0; score = 0; selectedIndex = -1;
       updateProgress();
       renderQuestion();
@@ -230,7 +450,7 @@
     function showResult() {
       show('result');
       resultTitle.textContent = 'Quiz Complete!';
-      resultDetail.textContent = `You scored ${score} / ${questions.length}`;
+      resultDetail.textContent = `You scored ${score} /5`;
       progressBar.style.width = '100%';
     }
 
